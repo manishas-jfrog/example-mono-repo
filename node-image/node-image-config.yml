@@ -12,7 +12,7 @@ resources:
 pipelines:
   - name: pipeline_build_node_image
     steps:
-      - name: run_java_build
+      - name: run_node_build
         type: Bash
         configuration:
           affinityGroup: dockerGroup
