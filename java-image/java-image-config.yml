@@ -1,5 +1,5 @@
 resources:
-  - name: repo_java_image
+  - name: repo_java
     type: GitRepo
     configuration:
       gitProvider: manishas_github   # replace with your integration
@@ -17,8 +17,8 @@ pipelines:
         configuration:
           affinityGroup: dockerGroup
           inputResources:
-            - name: repo_java_image
+            - name: repo_java
         execution:
           onExecute:
             - echo "I am running the Java build pipeline"
-            - cat $res_repo_java_image_resourcePath/readme-java.md
+            - cat $res_repo_java_resourcePath/readme-java.md
