@@ -21,4 +21,4 @@ pipelines:
         execution:
           onExecute:
             - echo "I am running the Java build pipeline"
-            - cat $res_repo_java_resourcePath/readme-java.md
+            - cat $res_repo_java_resourcePath/java-image/readme-java.md
