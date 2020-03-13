@@ -15,7 +15,6 @@ pipelines:
       - name: run_node_build
         type: Bash
         configuration:
-          affinityGroup: dockerGroup
           inputResources:
             - name: repo_node
         execution:
