@@ -20,5 +20,5 @@ pipelines:
             - name: repo_node
         execution:
           onExecute:
-            - echo "I am running the Java build pipeline"
+            - echo "I am running the Node build pipeline"
             - cat $res_repo_node_resourcePath/node-image/readme-node.md
