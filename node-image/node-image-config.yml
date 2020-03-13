@@ -1,0 +1,24 @@
+resources:
+  - name: repo_node_image
+    type: GitRepo
+    configuration:
+      gitProvider: manishas_github   # replace with your integration
+      path: manishas-jfrog/example-multiple-pipeline-config-files    # replace with your repository name
+      branches:
+        include: master
+      files:
+        include: ^node-image\/.+
+
+pipelines:
+  - name: pipeline_build_node_image
+    steps:
+      - name: run_java_build
+        type: Bash
+        configuration:
+          affinityGroup: dockerGroup
+          inputResources:
+            - name: repo_node_image
+        execution:
+          onExecute:
+            - echo "I am running the Java build pipeline"
+            - cat $res_repo_node_image_resourcePath/readme-node.md
